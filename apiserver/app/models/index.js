@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize({
-    dialect: 'sqlite',
-    storage: 'db.development.sqlite'
-});
+const config = require('../config');
+const sequelize = new Sequelize(config.db);
 
 const User =  sequelize.define('user', {
   name: Sequelize.STRING,
